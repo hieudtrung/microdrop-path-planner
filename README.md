@@ -1,8 +1,8 @@
-# OpenDrop Path Planner Plugin
+# OpenDrop Route Planner Plugin
 
-A GUI-based controller for OpenDrop. The paths are calculated by David Silver's [Windowed Hierachical Cooperative A* (WHCA)](https://www.davidsilver.uk/wp-content/uploads/2020/03/coop-path-AIIDE.pdf).
+[OpenDrop](https://www.gaudi.ch/OpenDrop/) is an open-source microfluidic-control platform that leverages the cutting-edge electro-wetting technology. The device is integrated in many lab-on-chip systems to automate various experiments of digital biology. Nevertheless, the current design is flexible enough that we can broaden more use cases to other fields such as art, music, games, or robotics.
 
-A big thanks to the original Java implementation by [igrek51](https://github.com/igrek51/coop-pathfinder/tree/master).
+This plugin provides a GUI-based controller for OpenDrop. Users only need to define each droplet's start & one or more destinations. Then, the routes are calculated by the [Windowed Hierachical Cooperative A* (WHCA)](https://www.davidsilver.uk/wp-content/uploads/2020/03/coop-path-AIIDE.pdf) algorithm. No more explicit, static definition in JSON.
 
 ## Getting Started
 
@@ -51,4 +51,8 @@ A big thanks to the original Java implementation by [igrek51](https://github.com
 
 ### Run the plugin with OpenDrop
 
-<todo> Coming soon </todo>
+Coming soon
+
+## References
+
+A big thanks to the original Java implementation of WHCA by [igrek51](https://github.com/igrek51/coop-pathfinder/tree/master).
