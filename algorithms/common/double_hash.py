@@ -1,7 +1,7 @@
 from typing import Any
 
 
-class DoubleHashMap:
+class BiHashMap:
     def __init__(self) -> None:
         self.mMap: dict[dict] = {}
 
@@ -9,4 +9,13 @@ class DoubleHashMap:
         self.mMap[key1] = {key2: value}
 
     def get(self, key1: Any, key2: Any) -> Any:
-        return self.mMap[key1][key2]
+        try:
+            return self.mMap[key1][key2]
+        except KeyError:
+            return None
+
+    def contains(self, key1: Any, key2: Any) -> bool:
+        return (key1 in self.mMap.keys()) and (key2 in self.mMap[key1].keys())
+    
+    def clear(self) -> None:
+        self.mMap.clear()

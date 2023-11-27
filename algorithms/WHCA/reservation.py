@@ -3,13 +3,16 @@ from typing import Optional
 
 
 class ReservationTable:
-    def __init__(self, width: int, height: int, timestamps: int) -> None:
+    def __init__(self, width: int, height: int, time: int) -> None:
         self.w = width
         self.h = height
-        self.c = timestamps  # number of channels
+        self.c = time  # number of channels
         self.cells: np.ndarray = np.zeros(
             (self.c, self.w, self.h), dtype=bool
         )  # 1 = blocked, 0 = available
+
+    def getDims(self):
+        return self.w, self.h, self.c
 
     def clear(self) -> None:
         self.cells = np.zeros((self.c, self.w, self.h), dtype=bool)

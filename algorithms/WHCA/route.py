@@ -1,4 +1,5 @@
 from __future__ import annotations
+from typing import Optional
 
 
 class Step:
@@ -18,15 +19,15 @@ type Steps = list[Step]
 
 
 class Route:
-    def __init__(self, steps: Steps = None) -> None:
+    def __init__(self, steps: Optional[Steps] = []) -> None:
         self.steps = steps
 
     @property
     def length(self):
         return len(self.steps) if self.steps else 0
 
-    def add_step(self, step: Step) -> None:
-        self.steps.append(step)
+    def prepend_step(self, step: Step) -> None:
+        self.steps.insert(0, step)
 
     def get_step(self, index: int) -> Step:
         return self.steps[index]

@@ -4,7 +4,7 @@ from tile import Tile
 type Tiles = list[list[Tile]]
 
 
-class Map:
+class TileMap:
     def __init__(self, width: int, height: int) -> None:
         self.w = width
         self.h = height
