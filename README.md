@@ -10,10 +10,11 @@ This plugin provides a GUI-based controller for OpenDrop. Users only need to def
 
 1. Install Java Development Kit 8 (JDK 8) and Maven (version 3.4 or newer)
 
-2. Clone this source code & navigate to the right folder
+2. Clone this source code & navigate to the right branch & folder
 
     ```bash
     git clone https://github.com/hieudtrung/opendrop-planner.git
+    git checkout archive
     cd algorithms/WHCA
     ```
 
@@ -36,10 +37,11 @@ This plugin provides a GUI-based controller for OpenDrop. Users only need to def
 
 1. If you only want to run the pre-compiled WHCA demo, just install Java runtime environment (JRE) instead of the whole JDK. Make sure it is in your `$PATH` environment variable.
 
-2. Clone this source code & navigate to the right folder
+2. Clone this source code & navigate to the right branch & folder
 
     ```bash
     git clone https://github.com/hieudtrung/opendrop-planner.git
+    git checkout archive
     cd algorithms/WHCA
     ```
 
@@ -51,7 +53,7 @@ This plugin provides a GUI-based controller for OpenDrop. Users only need to def
 
 ### Run the plugin with OpenDrop
 
-Coming soon
+Checkout the main branch
 
 ## References
 

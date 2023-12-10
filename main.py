@@ -1,13 +1,11 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import numpy as np
-from algorithms import astar
+from algorithms.AStar import astar
 
 
 def simple_web_ui():
-    """A simple Streamlit app to demo path finding algorithms
-    """
+    """A simple Streamlit app to demo path finding algorithms"""
     ...
 
 
@@ -16,11 +14,11 @@ def main():
     nmaze = np.zeros((n_rows, n_cols))
     maze = nmaze.tolist()
 
-    startA = (0,0)
+    startA = (0, 0)
     endA = (3, 4)
 
-    startB = (1,9)
-    endB = (1,3)
+    startB = (1, 9)
+    endB = (1, 3)
 
     # Todo! Boundary checking: raise exception if either start/end is out of range
 
@@ -32,6 +30,6 @@ def main():
     print(pathB)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # main()
     print("Hello")
