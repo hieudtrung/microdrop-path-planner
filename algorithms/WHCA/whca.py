@@ -1,11 +1,11 @@
-from common import RouteFinder, TileMap, BiHashMap
+from common import PathFinder, TileMap, BiHashMap
 from reservation import ReservationTable
 from node import Node
-from route import Route, Step
+from path import Path, Step
 import numpy as np
 
 
-class WHCARouteFinder(RouteFinder):
+class WHCAPathFinder(PathFinder):
     def __init__(self, reservation: ReservationTable, tile_map: TileMap) -> None:
         super().__init__()
         self.reservation = reservation
@@ -30,7 +30,7 @@ class WHCARouteFinder(RouteFinder):
     def is_valid_move(self):
         ...
 
-    def find(self, sX: int, sY: int, tX: int, tY: int) -> Route:
+    def find(self, sX: int, sY: int, tX: int, tY: int) -> Path:
         # initial state for A*. The closed group is empty. Only the starting tile is in the opened list and it'e're already there
         self.closed.clear()
         self.opened.clear()
@@ -55,17 +55,17 @@ class WHCARouteFinder(RouteFinder):
         while self.opened:  # Loop until the list `opened` is empty
             current = self.opened[0]
             if current.x == tX and current.y == tY and current.t == time - 1:
-                route = Route()
+                path = Path()
                 node = nodes[tX][tY][current.t]
 
                 while node != start_node:
                     step = Step(node.x, node.y, node.t)
-                    route.prepend_step(step)
+                    path.prepend_step(step)
                     node = node.parent
                     assert node == None, "Empty target"
 
-                route.prepend_step(sX, sY, 0)
-                return route
+                path.prepend_step(sX, sY, 0)
+                return path
 
             self.opened.remove(current)
             self.closed.append(current)

@@ -1,4 +1,4 @@
-from algorithms import RouteFinder
+from algorithms import PathFinder
 
 
 def main():
@@ -7,10 +7,10 @@ def main():
     # Generate droplets
     droplets = []
     # Init a path finder instance
-    finder = RouteFinder()
-    routes = finder.find(droplets)
+    finder = PathFinder()
+    paths = finder.find(droplets)
 
-    print(routes)
+    print(paths)
 
 
 if __name__ == "__main__":

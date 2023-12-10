@@ -18,7 +18,7 @@ class Step:
 type Steps = list[Step]
 
 
-class Route:
+class Path:
     def __init__(self, steps: Optional[Steps] = []) -> None:
         self.steps = steps
 

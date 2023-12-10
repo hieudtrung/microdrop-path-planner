@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class RouteFinder(ABC):
+class PathFinder(ABC):
     @abstractmethod
     def find(self):
         ...
