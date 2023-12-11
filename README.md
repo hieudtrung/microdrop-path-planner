@@ -59,6 +59,32 @@ In this project, I create a plugin for MicroDrop named "Path Planner". This plug
 
 Coming soon
 
+## Developer Guide
+
+This section introduces how to develop your own path finding algorithm and plug it into the MicroDrop application as one of its plugin.
+
+ 1. Install dependencies listed in `requirements.host` section of
+    [`.conda-recipe/meta.yaml`](/.conda-recipe/meta.yaml).
+ 2. Run the following command from the repository root:
+
+    ```bash
+    python -m mpm.bin.build -p path-planner --properties-only -s . -t .
+    ```
+
+ 3. Select or create directory as root to hold development plugins, e.g.,
+
+    ```bash
+    mkdir %USERPROFILE%\microdrop-dev-plugins
+    ```
+
+ 4. Create link to repo directory in development root with import-friendly **_plugin_** name, e.g.:
+
+    ```bash
+    mklink /J %USERPROFILE%\microdrop-dev-plugins\path-planner-plugin %REPO_DIR%
+    ```
+
+ 5. Add this directory (or where you store all the plugins) to semi-colon-separated list of paths in `MICRODROP_PLUGINS_PATH` environment variable.
+
 ## TODO
 
 - [ ] Implement WHCA
@@ -70,3 +96,5 @@ Coming soon
 [1] A big thanks to the original Java implementation of WHCA by [igrek51](https://github.com/igrek51/coop-pathfinder/tree/master).
 
 [2] [Windowed Hierachical Cooperative A* (WHCA)](https://www.davidsilver.uk/wp-content/uploads/2020/03/coop-path-AIIDE.pdf)
+
+[3] [Official guide](https://github.com/sci-bots/microdrop/wiki/Developer-Guide) from MicroDrop and their [Youtube channel](https://youtu.be/btmT3jUZpjs?feature=shared)

@@ -1,3 +1,12 @@
+.project
+.pydevproject
+*.tar.gz
+.sconsign.dblite
+*.pyc
+properties.yml
+# Ignore build script auto-generated during Conda package build.
+bld.bat
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
