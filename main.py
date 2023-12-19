@@ -1,16 +1,12 @@
-from algorithms import PathFinder
+# from algorithms import PathFinder
+from flask import Flask
+
+app = Flask(__name__)
 
 
+@app.post("/astar")
 def main():
-    # Generate a map with GUI
-
-    # Generate droplets
-    droplets = []
-    # Init a path finder instance
-    finder = PathFinder()
-    paths = finder.find(droplets)
-
-    print(paths)
+    return {"nextX": 5, "nextY": 10}
 
 
 if __name__ == "__main__":
